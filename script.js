@@ -55,13 +55,10 @@ $(document).ready(function () {
   function update(t) {
     if (!mouseMoved) {
       pointer.x =
-        (0.5 +
-          0.3 * Math.cos(0.002 * t) * Math.sin(0.005 * t)) *
+        (0.5 + 0.3 * Math.cos(0.002 * t) * Math.sin(0.005 * t)) *
         window.innerWidth;
       pointer.y =
-        (0.5 +
-          0.2 * Math.cos(0.005 * t) +
-          0.1 * Math.sin(0.01 * t)) *
+        (0.5 + 0.2 * Math.cos(0.005 * t) + 0.1 * Math.sin(0.01 * t)) *
         window.innerHeight;
     }
 
@@ -88,8 +85,7 @@ $(document).ready(function () {
       const xc = 0.5 * (trail[i].x + trail[i + 1].x);
       const yc = 0.5 * (trail[i].y + trail[i + 1].y);
       ctx.quadraticCurveTo(trail[i].x, trail[i].y, xc, yc);
-      ctx.lineWidth =
-        params.widthFactor * (params.pointsNumber - i) * 0.02;
+      ctx.lineWidth = params.widthFactor * (params.pointsNumber - i) * 0.02;
       ctx.stroke();
     }
 
@@ -136,22 +132,18 @@ $(document).ready(function () {
       );
       const maxScale = screenDiagonal / initialSize;
       const scale = 1 + ((progress - 0.2) / 0.25) * (maxScale - 1);
-      $circle.css(
-        "transform",
-        `translate(-50%, -50%) scale(${scale})`
-      );
+      $circle.css("transform", `translate(-50%, -50%) scale(${scale})`);
     }
 
     if (progress < 0.5) {
-      $('.scroll-arrow').css("opacity", 1);
+      $(".scroll-arrow").css("opacity", 1);
       $section2.css("background", "#fff");
       $circle.css("background-color", "#00ff66");
     } else {
-      $('.scroll-arrow').css("opacity", 0);
+      $(".scroll-arrow").css("opacity", 0);
       $circle.css("background-color", "#000");
       $section2.css("background", "#000");
     }
-
   });
 });
 
@@ -220,29 +212,29 @@ $(window).mousemove((e) => {
 });
 
 $(".sec_wrap_2 .swiper-slide").mouseenter(function () {
-    if (!isActive) {
-        $("html").addClass("need-to-cursor-big");
-        $cursorShadow.text("맞춤형 건강 관리 시작");
-    }
+  if (!isActive) {
+    $("html").addClass("need-to-cursor-big");
+    $cursorShadow.text("맞춤형 건강 관리 시작");
+  }
 });
 
 $(".sec_wrap_2 .swiper-slide").mouseleave(function () {
-    if (!isActive) {
-        $("html").removeClass("need-to-cursor-big");
-        $cursorShadow.text("");
-    }
+  if (!isActive) {
+    $("html").removeClass("need-to-cursor-big");
+    $cursorShadow.text("");
+  }
 });
 
 // 클릭도 동일하게 수정
 $(".sec_wrap_2 .swiper-slide").click(function () {
-    isActive = !isActive;
-    if (isActive) {
-        $("html").removeClass("need-to-cursor-big");
-        $cursorShadow.text("");
-    } else {
-        $("html").addClass("need-to-cursor-big");
-        $cursorShadow.text("맞춤형 건강 관리 시작");
-    }
+  isActive = !isActive;
+  if (isActive) {
+    $("html").removeClass("need-to-cursor-big");
+    $cursorShadow.text("");
+  } else {
+    $("html").addClass("need-to-cursor-big");
+    $cursorShadow.text("맞춤형 건강 관리 시작");
+  }
 });
 /* ============================================================
    [3] 카드 섹션 애니메이션 + 감속 스크롤
@@ -257,7 +249,7 @@ if (section && cards.length === 3) {
       trigger: ".sec_wrap_3",
       start: "top top",
       end: "+=200%", // 오래 고정
-      pin:true ,
+      pin: true,
       scrub: 0.2,
       anticipatePin: 1,
 
@@ -313,16 +305,8 @@ if (section && cards.length === 3) {
       duration: 0.5,
       ease: "power2.inOut",
     })
-    .to(
-      ".card.card_2",
-      { scale: 1, duration: 0.5, ease: "power2.inOut" },
-      "<"
-    )
-    .to(
-      ".card.card_3",
-      { x: 550, duration: 0.5, ease: "power2.inOut" },
-      "<"
-    )
+    .to(".card.card_2", { scale: 1, duration: 0.5, ease: "power2.inOut" }, "<")
+    .to(".card.card_3", { x: 550, duration: 0.5, ease: "power2.inOut" }, "<")
 
     // === 나머지 75%는 정지상태 === //
     .to({}, { duration: 2 }); // 이건 단순히 타임라인 늘리기 역할
@@ -373,24 +357,22 @@ $(function () {
   });
 });
 
+$(document).ready(function () {
+  var $sec3 = $(".sec_wrap_3");
 
+  $(window).on("scroll", function () {
+    var scrollTop = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    var sec3Top = $sec3.offset().top;
+    var sec3Height = $sec3.outerHeight();
 
-$(document).ready(function() {
-    var $sec3 = $('.sec_wrap_3');
-
-    $(window).on('scroll', function() {
-        var scrollTop = $(window).scrollTop();
-        var windowHeight = $(window).height();
-        var sec3Top = $sec3.offset().top;
-        var sec3Height = $sec3.outerHeight();
-
-        // 섹션 3이 화면 전체에 다 보일 때
-        if (scrollTop + windowHeight >= sec3Top + sec3Height) {
-            $('body').addClass('scrolled-3');
-        } else {
-            $('body').removeClass('scrolled-3');
-        }
-    });
+    // 섹션 3이 화면 전체에 다 보일 때
+    if (scrollTop + windowHeight >= sec3Top + sec3Height) {
+      $("body").addClass("scrolled-3");
+    } else {
+      $("body").removeClass("scrolled-3");
+    }
+  });
 });
 // 3섹션----//
 
@@ -469,8 +451,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 폴백 + 방향 판정 (iOS Safari 등 초기 딜레이 보정 및 방향 토글)
   const fallbackCheck = () => {
     const r = section.getBoundingClientRect();
-    const vh =
-      window.innerHeight || document.documentElement.clientHeight;
+    const vh = window.innerHeight || document.documentElement.clientHeight;
     const visibleH = Math.min(r.bottom, vh) - Math.max(r.top, 0);
     const ratio = Math.max(0, Math.min(visibleH / r.height, 1));
     const visible = ratio >= THRESH;
@@ -511,3 +492,49 @@ document.addEventListener("DOMContentLoaded", () => {
   //   window.removeEventListener('resize', fallbackCheck);
   // });
 });
+
+const ham = document.querySelector(".meun-button > span");
+const menu = document.querySelector("ul.main-menu");
+const links = menu.querySelectorAll("li");
+
+var tl = gsap.timeline({ paused: true });
+
+tl.to(menu, {
+  duration: 0.5,
+  opacity: 1,
+  height: "60vh", // change this to 100vh for full-height menu
+  ease: "expo.inOut",
+});
+tl.from(
+  links,
+  {
+    duration: 0.5,
+    opacity: 0,
+    y: 20,
+    stagger: 0.1,
+    ease: "expo.inOut",
+  },
+  "-=0.5"
+);
+
+tl.reverse();
+
+ham.addEventListener("click", () => {
+  tl.reversed(!tl.reversed());
+});
+
+// 로딩화면//
+window.addEventListener("load", function () {
+  const loader = document.getElementById("loopyit-loader");
+  if (!loader) return;
+
+  setTimeout(() => {
+    loader.classList.add("is-hidden");
+  }, 1500);
+
+  // 🔥 로딩이 끝날 때 모든 애니메이션 잠금 해제
+  setTimeout(() => {
+    document.documentElement.classList.remove("loading");
+  }, 1800);
+});
+// -----로딩화면끝---//
