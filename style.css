@@ -475,6 +475,8 @@ position: absolute; left:58%; top: 15%;}
   display:flex; justify-content:center; align-items:center;
   transition:background-color 2s ease; z-index:5;
   overscroll-behavior: contain;
+  
+  background-color: #000;
 }
 .sec_3_main_title{
   position:absolute; top:50%; transform:translateY(-50%); text-align:center;
@@ -483,7 +485,6 @@ position: absolute; left:58%; top: 15%;}
   font-size:clamp(48px, 10vw, 180px);
   font-weight:bold; line-height:1.8; color:#00ff50; margin:0; transition:color 1.5s ease;
 }
-body.scrolled-3 .sec_wrap_3{ background-color:#000; }
 body.scrolled-3 .sec_3_main_title p{ color:#fff; opacity:.5; }
 
 .cards-wrapper{ display:flex; min-height: 100vh;}
@@ -501,11 +502,6 @@ body.scrolled-3 .sec_3_main_title p{ color:#fff; opacity:.5; }
 .card_img_1 img{ width:268px; height:362px; position:absolute; top:156px; left:180px; }
 .card_img_2 img{ width:275px; height:390px; position:absolute; top:80px; left:180px; }
 .card_img_3 img{ width:360px; height:520px; position:absolute; top:0; left:100px; }
-
-.card_2 {
-  height: 440px;
-  width: 420px;
-}
 
 /* 리뷰섹션 */
 .review_sec {

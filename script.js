@@ -1,25 +1,28 @@
+AOS.init();
+gsap.registerPlugin(ScrollTrigger);
+
 // 로딩화면//
-const introTl = gsap.timeline({ paused: true });
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loopyit-loader");
-  const glitchTarget = document.querySelector(".main-content h1");
+// const introTl = gsap.timeline({ paused: true });
+// window.addEventListener("load", () => {
+//   const loader = document.getElementById("loopyit-loader");
+//   const glitchTarget = document.querySelector(".main-content h1");
 
-  if (!loader) return;
+//   if (!loader) return;
 
-  // 자연스러운 애니메이션을 위해 쪼갠 것
-  setTimeout(() => {
-    loader.classList.add("is-hidden");
-  }, 1500);
+//   // 자연스러운 애니메이션을 위해 쪼갠 것
+//   setTimeout(() => {
+//     loader.classList.add("is-hidden");
+//   }, 1500);
 
-  setTimeout(() => {
-    if (glitchTarget) glitchTarget.classList.add("glitch");
-  }, 1800);
+//   setTimeout(() => {
+//     if (glitchTarget) glitchTarget.classList.add("glitch");
+//   }, 1800);
 
-  setTimeout(() => {
-    AOS.init();
-    gsap.registerPlugin(ScrollTrigger);
-  }, 2000);
-});
+//   setTimeout(() => {
+//     AOS.init();
+//     gsap.registerPlugin(ScrollTrigger);
+//   }, 2000);
+// });
 // -----로딩화면끝---//
 
 /* ============================================================
@@ -296,39 +299,54 @@ if (section && cards.length === 3) {
   // === 타임라인 시작 == //
   // 타임라인의 0~25% 사이에서 애니메이션을 모두 끝냄
   tl.fromTo(
+  cards,
+  { y: 160, opacity: 0, scale: 0.9 },
+  {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    duration: 0.5,
+    stagger: 0,
+    ease: "power3.out",
+  }
+  )
+  .to(
     cards,
-    { y: 160, opacity: 0, scale: 0.9 },
     {
-      y: 0,
-      opacity: 0.3,
-      scale: 1,
-      duration: 0.4,
-      stagger: 0.08,
+      scale: 1.08,
+      duration: 0.3,
+      stagger: 0,
       ease: "power2.out",
     }
   )
-    .to(
-      cards,
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.4,
-        ease: "power2.inOut",
-        stagger: 0.02,
-      },
-      "-=0.1"
-    )
-    .to(".card.card_1", {
-      x: -550,
-      duration: 0.5,
-      ease: "power2.inOut",
-    })
-    .to(".card.card_2", { scale: 1, duration: 0.5, ease: "power2.inOut" }, "<")
-    .to(".card.card_3", { x: 550, duration: 0.5, ease: "power2.inOut" }, "<")
+  .to(".card.card_1", {
+    x: -520,
+    duration: 0.5,
+    ease: "power2.out",
+  })
+  .to(".card.card_2", {
+    x: 0,
+    duration: 0.9,
+    ease: "power2.out",
+  }, "<")
+  .to(".card.card_3", {
+    x: 520,
+    duration: 0.5,
+    ease: "power2.out",
+  }, "<")
+  .to({}, { duration: 1})
+  .to(".card.card_1", {
+    rotate: -4,
+  })
+  .to(".card.card_2", {
+    rotate: 3,
+  }, "<")
+  .to(".card.card_3", {
+    rotate: -3,
+  }, "<")
+  .to({}, { duration: 2 });
 
-    // === 나머지 75%는 정지상태 === //
-    .to({}, { duration: 2 }); // 이건 단순히 타임라인 늘리기 역할
-}
+  }
 
 // 반응형 대응
 window.addEventListener("resize", () => {
