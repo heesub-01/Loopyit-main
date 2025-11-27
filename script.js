@@ -2,27 +2,27 @@ AOS.init();
 gsap.registerPlugin(ScrollTrigger);
 
 // 로딩화면//
-// const introTl = gsap.timeline({ paused: true });
-// window.addEventListener("load", () => {
-//   const loader = document.getElementById("loopyit-loader");
-//   const glitchTarget = document.querySelector(".main-content h1");
+const introTl = gsap.timeline({ paused: true });
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loopyit-loader");
+  const glitchTarget = document.querySelector(".main-content h1");
 
-//   if (!loader) return;
+  if (!loader) return;
 
-//   // 자연스러운 애니메이션을 위해 쪼갠 것
-//   setTimeout(() => {
-//     loader.classList.add("is-hidden");
-//   }, 1500);
+  // 자연스러운 애니메이션을 위해 쪼갠 것
+  setTimeout(() => {
+    loader.classList.add("is-hidden");
+  }, 1500);
 
-//   setTimeout(() => {
-//     if (glitchTarget) glitchTarget.classList.add("glitch");
-//   }, 1800);
+  setTimeout(() => {
+    if (glitchTarget) glitchTarget.classList.add("glitch");
+  }, 1800);
 
-//   setTimeout(() => {
-//     AOS.init();
-//     gsap.registerPlugin(ScrollTrigger);
-//   }, 2000);
-// });
+  setTimeout(() => {
+    AOS.init();
+    gsap.registerPlugin(ScrollTrigger);
+  }, 2000);
+});
 // -----로딩화면끝---//
 
 /* ============================================================
