@@ -345,8 +345,13 @@ header {
 .sec_wrap_1 > .fall-box{
   width:384px; height:543px; background-color:#eaeaea; border-radius:16px;
   position:absolute; left:50%; top:20%; transform:translateX(-50%) rotate(-15deg);
-  box-shadow:0 15px 30px rgba(0,0,0,.15); z-index:1; 
+  box-shadow:0 15px 30px rgba(0,0,0,.15); z-index:1; filter: brightness(0.9);
 }
+
+.fall-box img {
+  border-radius: 16px; 
+}
+
 
 .sec_wrap_1 > .fall-text{
   position: relative; z-index:2;
@@ -559,10 +564,9 @@ body.scrolled-3 .sec_3_main_title p{ color:#fff; opacity:.5; }
   gap: 20px;
 }
 
-.review-img {
-  width: 100px;
-  height: 100px;
-  background-color: #00ff50;
+.review-img img {
+  width: 120px;
+  height: 150px;
   border-radius: 50PX;
 }
 
@@ -573,12 +577,12 @@ body.scrolled-3 .sec_3_main_title p{ color:#fff; opacity:.5; }
 }
 
 .review-name span:nth-child(1) {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 600;
 }
 
 .review-name span:nth-child(2) {
-  font-size: 23px;
+  font-size: 19px;
   font-weight: 400;
 }
 
