@@ -147,10 +147,6 @@ header .meun-button li a {
   color: #000;
 }
 
-
-.logo{ width:65px; }
-.menu{ width:50px; }
-
 .main-content{
   display:flex; flex-direction:column; align-items:center; z-index:5; padding-top: 100px;
 }
