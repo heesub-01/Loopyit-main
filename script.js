@@ -1,4 +1,4 @@
-// 로딩화면//
+// 로딩화면//AOS.init();
 const introTl = gsap.timeline({ paused: true });
 window.addEventListener("load", () => {
   const loader = document.getElementById("loopyit-loader");
@@ -415,6 +415,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // });
 });
 
+
+// 헤더
 const ham = document.querySelector(".meun-button > span");
 const menu = document.querySelector("ul.main-menu");
 const links = menu.querySelectorAll("li");

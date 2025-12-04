@@ -10,7 +10,11 @@
   <title>Loopyit 고객센터</title>
 
   <!-- 외부 CSS 연결 -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js" defer ></script>
 </head>
 
 <body>
@@ -18,9 +22,26 @@
   <!-- ===========================
         HERO / 상단 메인 영역
   ============================ -->
-  <header class="hero">
+  <section class="hero">
+     <header data-aos="fade-down"
+        data-aos-duration="1000"
+        data-aos-delay="1200">
+        <div class="wrapper">
+          <a href="../index.html" class="logo">
+            <img src="../imgs/loopyit-logo.png" alt="Loopyit Logo" />
+          </a>
+          <nav class="meun-button">
+            <span><img src="../imgs/main-menu.png" alt="Menu" width="50px"/></span>
+            <ul class="main-menu">
+              <li><a href="../index.html">HOME</a></li>
+              <li><a href="../brand/brand.html" target="_blank">BRAND</a></li>
+              <li><a href="../service/service.html" target="_blank">SERVICE</a></li>
+              <li><a href="../service_center/serv_center.html" target="_blank">SERVICE CENTER</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
     <div class="center-box">
-
       <!-- 메인 로고 -->
       <img src="../imgs/loopyit-logo_w.png" alt="Loopyit 로고" class="main-logo" />
 
@@ -52,7 +73,7 @@
 
     <!-- 오른쪽 하단 AI 어시스턴트 이미지 -->
     <img class="assistant-icon" src="../imgs/ai-loopy.png" alt="AI Loopy 아이콘" />
-  </header>
+  </section>
 
 
   <!-- ===========================
@@ -250,11 +271,20 @@
         </form>
       </div>
     </section>
-
   </main>
-
-  <!-- JS 연결 -->
-  <script src="script.js"></script>
+<div class="close_bar bg_sec">
+      <div class="close_first_txt">/ Small Habits, Big Changes.</div>
+      <div class="close_second_txt">
+        COPYRIGHT LOOPYIT INC. ALL RIGHTS RESERVED.
+        <br />
+        CONTACT:+82-70-9876-5432 | support@loopyit.com | 서울특별시 강남구
+        테크밸리 456
+      </div>
+      <div class="bottom_img" data-aos="flip-left" data-aos-duration="500">
+        <img src="../imgs/smile_bottom.png" alt="#" />
+      </div>
+      <div class="close_last_txt">LOOPYIT</div>
+    </div>
 </body>
 
 </html>

@@ -82,7 +82,7 @@ ul, li { list-style: none; }
 ========================= */
 /* 마우스 커서 */
 html, body, * {
-  cursor: url("./imgs/cursor_48px.png") 0 0, auto !important;
+  cursor: url("./imgs/cursor_48px.png") 20 15, auto !important;
 }
 /* 섹션 1 (메인) */
 .main-section{

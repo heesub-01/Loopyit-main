@@ -1,3 +1,39 @@
+AOS.init();
+
+// 헤더
+const ham = document.querySelector(".meun-button > span");
+const menu = document.querySelector("ul.main-menu");
+const links = menu.querySelectorAll("li");
+
+var tl = gsap.timeline({ paused: true });
+
+tl.to(menu, {
+  duration: 0.5,
+  opacity: 1,
+  height: "60vh", // change this to 100vh for full-height menu
+  ease: "expo.inOut",
+});
+tl.from(
+  links,
+  {
+    duration: 0.5,
+    opacity: 0,
+    y: 20,
+    stagger: 0.1,
+    ease: "expo.inOut",
+  },
+  "-=0.5"
+);
+
+tl.reverse();
+
+ham.addEventListener("click", () => {
+  tl.reversed(!tl.reversed());
+});
+
+
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 const kfCards = gsap.utils.toArray(".kf-card");
@@ -5,7 +41,7 @@ const dots = gsap.utils.toArray(".kf-pagination .dot");
 
 const tl = gsap.timeline({
   scrollTrigger: {
-    trigger: ".sec-1",
+    trigger: ".main-warp",
     start: "top top",
     end: "+=300%",
     scrub: true,
@@ -18,11 +54,16 @@ const tl = gsap.timeline({
 
 // kf-card 애니메이션
 kfCards.forEach((card, i) => {
-  tl.fromTo(card,
-    { opacity: 0, y: 150 },
-    { opacity: 1, y: 0, duration: 1.9, ease: "power4.out" }
-  );
 
+  // 첫 번째 카드는 등장 애니메이션만 스킵
+  if (i !== 0) {
+    tl.fromTo(card,
+      { opacity: 0, y: 150 },
+      { opacity: 1, y: 0, duration: 1.9, ease: "power4.out" }
+    );
+  }
+
+  // 사라지는 애니메이션은 모든 카드에 적용
   if (i < kfCards.length - 1) {
     tl.to(card,
       { opacity: 0, y: -130, duration: 1.6, ease: "power2.inOut" },
