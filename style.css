@@ -328,7 +328,7 @@ header .meun-button li a {
 .sec_wrap_1 > .header_box:hover > .header_img > .header-img-2{ left:300px; }
 
 .sec_wrap_1 > .fall-box {
-  position:absolute; left:50%; top:12%; transform:translateX(-50%);  z-index:1; 
+  position:absolute; left:50%; top:5%; transform:translateX(-50%);  z-index:1; 
 }
 
 .fall-box img {
