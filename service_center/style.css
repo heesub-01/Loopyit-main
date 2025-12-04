@@ -1,0 +1,516 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Pretendard", sans-serif;
+}
+
+body {
+  margin: 0;
+  color: #fff;
+  overflow-x: hidden;  /* 가로 스크롤만 막고 세로는 살려두기 */
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  
+}
+
+/* 1920x1080 고정 + 좌우 패딩 300px */
+.hero {
+  width: 1920px;
+  height: 950px;
+  margin: 0 auto;
+  position: relative;
+
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-left: 300px;
+  padding-right: 300px;
+  box-sizing: border-box;
+}
+
+.center-box {
+  text-align: center;
+  transform: translateY(-100px);
+}
+
+/* 로고는 변경 */
+.main-logo {
+  width: 70px;
+  height: auto;
+  margin: 0 auto 32px;
+  display: block;
+  object-fit: contain;
+}
+
+/* 타이틀 크기 증가 */
+h1 {
+  font-size: 64px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.green-text {
+  color: #00FF50;
+}
+
+/* 서브 텍스트 */
+.subtitle {
+  font-size: 24px;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-top: 16px;
+  margin-bottom: 40px;
+}
+
+/* 검색창 — 크게 확장된 버전 */
+.search-box {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 50px;
+  padding: 20px 50px;  /* ← 좌우/상하 크게 */
+  width: 900px;
+  height: 60px;        /* ← 폭 확장 */
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+/* 검색창 입력 글씨 확대 */
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 20px;   /* ← 확대 */
+  color: #333;
+}
+
+.search-box input::placeholder {
+  color: #999;
+  font-size: 20px;;
+}
+
+/* 검색 아이콘 크게 */
+.search-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.search-icon-img {
+  width: 40px;    /* ← 더 크게 */
+  height: 40px;
+  object-fit: contain;
+}
+
+/* 추천 키워드 행 */
+.tag-row {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.tag-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #868686;
+}
+
+/* 태그 */
+.tag-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid #868686;
+  color: #868686;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.tag:hover {
+  border: 1px solid #00FF50;
+  color: #00FF50;
+}
+
+/* 오른쪽 하단 AI 아이콘 (패딩 고려) */
+.assistant-icon {
+  position: absolute;
+  right: 300px;
+  bottom: 60px;
+  width: 70px;
+  height: auto;
+}
+
+
+
+/* ======================================================================== */
+/* PAGE 2 : FAQ SECTION (흰색 / 동일 1920×950 / 패딩 300px) */
+/* ======================================================================== */
+
+.faq-section {
+  width: 1920px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding-left: 300px;
+  padding-right: 300px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;   /* ✅ center → flex-start 로 변경 */
+  justify-content: center;
+  color: #111;
+  padding-top: 180px;       /* ✅ 위 여백을 여기서 넣기 */
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  color: #111;          /* ✅ 질문 텍스트 색 지정 */
+}
+
+.faq-inner {
+  width: 100%;
+  max-width: 1320px;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 50px auto 100px;
+}
+
+.faq-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;  /* 왼쪽: 타이틀 / 오른쪽: 탭 */
+  align-items: flex-start;         /* 위 기준 정렬 */
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.faq-header h1 {
+  font-size: 64px;
+  font-weight: 800;
+  /* align-self, transform 등 이전에 넣었던 값은 제거 */
+}
+
+.faq-header h1 span {
+  font-size: 24px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.faq-tabs {
+  margin-top: 120px;           /* 타이틀보다 조금 아래 */
+  align-self: flex-start;     /* 왼쪽 정렬 */
+}
+
+.tab {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  background: #fff;
+  color:#777;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.tab.active {
+  background: #00FF50;
+  border-color: #00FF50;
+  color:#000;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.faq-category {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.faq-question .arrow {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: transform 0.3s;
+}
+
+.faq-question.active .arrow {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 18px;
+  color: #555;
+  transition: max-height 0.35s ease;
+  margin-top: 0;
+}
+
+.faq-answer.open {
+  max-height: 200px;
+  margin-top: 10px;
+}
+
+.view-all {
+  text-align: right;
+  margin-top: 40px;
+}
+
+.view-all a {
+  font-size: 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+
+/* ======================================================================== */
+/* PAGE 3 : 1:1 상담 신청 SECTION (배경 #000 / full width)                  */
+/* ======================================================================== */
+
+.inquiry-section {
+  width: 1920px;
+  height: 1680px;
+  position: relative;
+  background: #000;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 60px 50px;
+
+  /* 🔧 가운데 정렬 추가 */
+  margin: 0 auto;
+
+  /* 🔧 패딩은 inquiry-inner에서 줄 거라 여기선 지워줘 */
+  /* padding-left: 300px;
+     padding-right: 300px; */
+
+  /* justify-content / align-items 는 flex 아니면 의미 없으니 굳이 안 써도 됨 */
+}
+
+.inquiry-inner {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 180px 300px 0;
+  box-sizing: border-box;
+}
+
+/* 제목 */
+.inquiry-title {
+  font-size: 64px;
+  font-weight: 800;
+  margin: 0 0 40px;
+}
+
+/* 문장형 폼 라인 */
+.inquiry-rows {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  gap: 18px;
+
+}
+
+.inquiry-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  font-size: 26px;
+  line-height: 1.7;
+}
+
+.inquiry-row .star {
+  color: #00ff50;
+  font-size: 30px;
+  width: 14px; /* * 정렬용 여백 */
+}
+
+/* 칩 공통 */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 15px;
+  border-radius: 20px;
+  font-size: 24px;
+  white-space: nowrap;
+}
+
+/* 성별&나이 칩 */
+.chip-green-sex,
+.chip-green-age {
+  background: #00ff50;
+  color: #000;
+  border: 1px solid #00ff50;
+  border-radius: 50px;
+  
+}
+
+/* 초록 기본 칩 */
+.chip-green {
+  background: #00ff50;
+  color: #000;
+  border: 1px solid #00ff50;
+}
+
+/* 긴 초록 칩 (금액) */
+.chip-green-long {
+  background: #00ff50;
+  color: #000;
+  border-radius: 10px;
+  padding: 15px 15px;
+}
+
+/* 회색 칩 */
+.chip-gray {
+  background: #444;
+  color: #ddd;
+  border: 1px solid #444;
+  padding: 15px 15px;
+}
+
+/* 흰 배경 아웃라인 칩 */
+.chip-white {
+  background: #fff;
+  color: #000;
+  border: 1px solid #fff;
+}
+
+.chip-outline{
+  background: #444;
+  color: #FFF;
+  border: 1px solid #444;
+}
+
+/* 점선 박스 느낌 */
+.chip-dashed {
+  background: transparent;
+  color: #00ff50;
+  border-radius: 8px;
+  border: 2px dashed #00ff50;
+  padding: 15px 15px;
+}
+
+/* 하단 영역 */
+.inquiry-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 100px;
+  margin-top: 180px;
+}
+
+.inquiry-textbox {
+  flex: 1.4;
+  background-size: contain;              /* 비율 유지 */
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.inquiry-textbox textarea {
+  width: 100%;
+  height: 300px;
+  border: none;
+  resize: none;
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.inquiry-textbox p {
+  font-size: 16px;
+  color: #bbb;
+  margin: 0;
+}
+
+/* 오른쪽 CTA 블록 */
+.inquiry-cta {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 110px;
+}
+
+.inquiry-cta .cta-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #00ff50;
+  margin: 0 0 20px 0;
+}
+
+.cta-desc-cheak{
+  font-size: 15px;
+  color: #999;
+}
+
+
+/* 오른쪽 CTA 버튼 (타원 + 텍스트 + 아이콘) */
+.right-cta-bt {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;               /* 텍스트와 아이콘 사이 간격 */
+  padding: 10px 24px;
+  border-radius: 999px;   /* 타원형 */
+  border: 1px solid #fff;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* 버튼 안 아이콘 이미지 */
+.right-cta-bt .right-cta-icon {
+  width: 28px;            /* 아이콘 크기 조절 */
+  height: 28px;
+  display: block;
+}
