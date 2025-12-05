@@ -4,11 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+    <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js" defer></script>
-  <title>Document</title>
+  <title>Loopyit 브랜드</title>
 </head>
 <body>
-
+  <header data-aos="fade-down" data-aos-duration="1000" data-aos-delay="1200">
+    <div class="wrapper">
+      <a href="../index.html" class="logo">
+        <img src="../imgs/loopyit-logo.png" alt="Loopyit Logo" />
+      </a>
+  
+      <!-- 수정: meun → menu -->
+      <nav class="menu-button">
+        <span><img src="../imgs/main-menu.png" alt="Menu" width="50px"/></span>
+  
+        <ul class="main-menu">
+          <li><a href="../index.html">HOME</a></li>
+          <li><a href="../brand/brand.html" target="_blank">BRAND</a></li>
+          <li><a href="../service/service.html" target="_blank">SERVICE</a></li>
+          <li><a href="../service_center/serv_center.html" target="_blank">SERVICE CENTER</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
   <!-- 예빈 1 section -->
  <section class="hero">
     <h1>Make Your Routine !</h1>
@@ -191,6 +216,20 @@
 
   </div>
 </section>
+<!-- 푸터 -->
+<div class="close_bar bg_sec">
+      <div class="close_first_txt">/ Small Habits, Big Changes.</div>
+      <div class="close_second_txt">
+        COPYRIGHT LOOPYIT INC. ALL RIGHTS RESERVED.
+        <br />
+        CONTACT:+82-70-9876-5432 | support@loopyit.com | 서울특별시 강남구
+        테크밸리 456
+      </div>
+      <div class="bottom_img" data-aos="flip-left" data-aos-duration="500">
+        <img src="/imgs/footer-img.png" alt="#" width="300px" height="159px"/>
+      </div>
+      <div class="close_last_txt">LOOPYIT</div>
+    </div>
 
 </body>
 </html>

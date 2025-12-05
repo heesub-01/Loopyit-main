@@ -1,19 +1,22 @@
 AOS.init();
 
-// 헤더
-const ham = document.querySelector(".meun-button > span");
+
+// ============================
+// 헤더 메뉴 (이름 충돌 해결)
+// ============================
+const ham = document.querySelector(".menu-button > span");
 const menu = document.querySelector("ul.main-menu");
 const links = menu.querySelectorAll("li");
 
-var tl = gsap.timeline({ paused: true });
+var menuTl = gsap.timeline({ paused: true });
 
-tl.to(menu, {
+menuTl.to(menu, {
   duration: 0.5,
   opacity: 1,
-  height: "60vh", // change this to 100vh for full-height menu
+  height: "60vh",
   ease: "expo.inOut",
 });
-tl.from(
+menuTl.from(
   links,
   {
     duration: 0.5,
@@ -25,23 +28,24 @@ tl.from(
   "-=0.5"
 );
 
-tl.reverse();
+menuTl.reverse();
 
 ham.addEventListener("click", () => {
-  tl.reversed(!tl.reversed());
+  menuTl.reversed(!menuTl.reversed());
 });
 
 
-
-
+// ============================
+// 카드 애니메이션 / 페이지네이션
+// ============================
 gsap.registerPlugin(ScrollTrigger);
 
 const kfCards = gsap.utils.toArray(".kf-card");
 const dots = gsap.utils.toArray(".kf-pagination .dot");
 
-const tl = gsap.timeline({
+const cardTl = gsap.timeline({
   scrollTrigger: {
-    trigger: ".main-warp",
+    trigger: ".sec-1",
     start: "top top",
     end: "+=300%",
     scrub: true,
@@ -52,21 +56,20 @@ const tl = gsap.timeline({
   }
 });
 
-// kf-card 애니메이션
+// 카드 애니메이션
 kfCards.forEach((card, i) => {
-
-  // 첫 번째 카드는 등장 애니메이션만 스킵
   if (i !== 0) {
-    tl.fromTo(card,
+    cardTl.fromTo(
+      card,
       { opacity: 0, y: 150 },
-      { opacity: 1, y: 0, duration: 1.9, ease: "power4.out" }
+      { opacity: 1, y: 0, duration: 2, ease: "power4.out" }
     );
   }
 
-  // 사라지는 애니메이션은 모든 카드에 적용
   if (i < kfCards.length - 1) {
-    tl.to(card,
-      { opacity: 0, y: -130, duration: 1.6, ease: "power2.inOut" },
+    cardTl.to(
+      card,
+      { opacity: 0, y: -130, duration: 2, ease: "power2.inOut" },
       "+=1.0"
     );
   }
@@ -82,30 +85,22 @@ function updatePagination(progress) {
   dots[safeIndex].classList.add("active");
 }
 
-// 마우스감속//
-const lenis = new Lenis({
-  smooth: true,
-  lerp: 0.12,   // 감속 강도 (0.05~0.12 추천)
-  wheelMultiplier: 0.9
-});
 
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
-
-// ScrollTrigger 연동
-lenis.on('scroll', ScrollTrigger.update);
-
+// ============================
+// 배경 색 전환
+// ============================
 gsap.to(".sec-1", {
   backgroundColor: "#ffffff",
   scrollTrigger: {
     trigger: ".sec-2",
-    start: "top bottom",    // sec-2가 화면 아래에 닿기 시작할 때
-    end: "top center",      // sec-2가 화면 중앙에 올 때
+    start: "top bottom",
+    end: "top center",
     scrub: true
   }
 });
 
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    AOS.refreshHard();
+  }, 300);
+});

@@ -1,8 +1,81 @@
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+    font-family: 'ReperipointOblique';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ReperipointOblique';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-BlackObliqueA.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+a { color: inherit; text-decoration: none; }
+ul, li { list-style: none; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Pretendard", system-ui,
@@ -10,6 +83,70 @@ body {
   background: #000;   /* 2섹션이 검정이라 전체도 검정으로 */
   color: #fff;
 }
+
+html, body, * {
+  cursor: url("../imgs/cursor_48px.png") 20 15, auto !important;
+}
+
+header {
+  height: 100px;
+  z-index: 999;
+  width: 100%;
+  position: fixed;
+}
+
+/* header .wrapper */
+header .wrapper {
+  height: 100%;
+  display: flex;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+/* header .logo */
+header .logo {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  font-size: 2rem;
+  transform: translateX(-50%);
+}
+
+/* header .menu-button */
+header .menu-button {
+  margin-left: auto;
+  position: relative;
+}
+
+/* menu-button ul */
+header .menu-button ul {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  text-align: right;
+  z-index: 11;
+}
+
+/* menu-button li */
+header .menu-button li {
+  display: block;
+  width: fit-content;
+  padding: 14px 30px;
+  background: #00ff50;
+  border-radius: 40px;
+  margin: 10px 0;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+/* menu-button a */
+header .menu-button li a {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+}
+
 
 /* 1섹션 (이미 만든 거랑 비슷) */
 .hero {
@@ -174,43 +311,35 @@ body {
 
 /* ---- 예빈 2번째 section ---- */
 .msg-sequence {
+  position: relative;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #ffffff;
-  color: #000;
   overflow: hidden;
+  background-color: #fff;
 }
 
 .msg-sequence-inner {
-  position: relative;
   width: 100%;
-  max-width: 100%;
-  height: 600px;
-  /* border: solid 1px red; */
+  height: 100%;
+  position: relative;
+  color: #000;
 }
 
 .msg-line {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate3d(-50%, -50%, 0) translateY(20px); /* 아래에서 시작 */
-  text-align: center;
-  font-size: 48px;
-  line-height: 1.8;
-  font-weight: 700;
+  transform: translate(-50%, -50%);
   opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: .5s ease;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.6;
 }
 
-@media (max-width: 520px) {
-  .msg-line { font-size: 22px; }
+.msg-line.active {
+  opacity: 1;
 }
-
-
-
-
 
 
 /* ---- Our Mission 섹션 ---- */
@@ -493,4 +622,47 @@ body {
   .mission-card {
     padding: 60px 24px;
   }
+}
+
+/* 푸터 */
+.close_bar{
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 140px;
+  gap: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 1s;
+  /* border: solid black 2px; */
+}
+
+.close_first_txt {
+  font-size: 100px;
+  font-weight: bold;
+  color: #000;
+}
+
+.close_second_txt {
+  color: #000;
+  padding-top: 100px;
+  font-weight: 400px;
+}
+
+.close_last_txt{
+  color: #000;
+  font-weight: 800;
+  font-size: 350px;
+  text-align: center;
+  margin-bottom: -150px;
+  font-family: 'ReperipointOblique';
+}
+.bottom_img {
+  position: absolute;
+  top: 350px;
+  right: 250px;
 }

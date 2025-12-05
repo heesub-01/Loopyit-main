@@ -610,7 +610,6 @@ h1 {
   overflow: hidden;
   position: relative;
   transition: background-color 1s;
-  /* border: solid black 2px; */
 }
 
 .close_first_txt {

@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LOOPYIT-SERVICE</title>
+  <title>LOOPYIT 서비스</title>
   <link rel="stylesheet" href="style.css">
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+  <!-- AOS JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script> 
@@ -12,112 +17,139 @@
 </head>
 
 <body>
+  <!-- HEADER (오타 수정됨) -->
+  <header data-aos="fade-down" data-aos-duration="1000" data-aos-delay="1200">
+    <div class="wrapper">
+      <a href="../index.html" class="logo">
+        <img src="../imgs/loopyit-logo.png" alt="Loopyit Logo" />
+      </a>
+  
+      <!-- 수정: meun → menu -->
+      <nav class="menu-button">
+        <span><img src="../imgs/main-menu.png" alt="Menu" width="50px"/></span>
+  
+        <ul class="main-menu">
+          <li><a href="../index.html">HOME</a></li>
+          <li><a href="../brand/brand.html" target="_blank">BRAND</a></li>
+          <li><a href="../service/service.html" target="_blank">SERVICE</a></li>
+          <li><a href="../service_center/serv_center.html" target="_blank">SERVICE CENTER</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   <section class="sec-1">
- <header data-aos="fade-down"
-        data-aos-duration="1000"
-        data-aos-delay="1200">
-        <div class="wrapper">
-          <a href="../index.html" class="logo">
-            <img src="../imgs/loopyit-logo.png" alt="Loopyit Logo" />
-          </a>
-          <nav class="meun-button">
-            <span><img src="../imgs/main-menu.png" alt="Menu" width="50px"/></span>
-            <ul class="main-menu">
-              <li><a href="../index.html">HOME</a></li>
-              <li><a href="../brand/brand.html" target="_blank">BRAND</a></li>
-              <li><a href="../service/service.html" target="_blank">SERVICE</a></li>
-              <li><a href="../service_center/serv_center.html" target="_blank">SERVICE CENTER</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <div class="main-warp">
+
+
+    <div class="main-warp">
       <div class="main-title">
-      <p>Integrated Care,<br>Form Food to Skin</p>
-    </div>
-
-    <!-- 메인 카드 박스 -->
-    <div class="main-card">
-
-      <!-- 카드 01 -->
-      <div class="kf-card">
-        <div class="card-num"><img src="../imgs/Group 1030.png" alt=""></div>
-        <div class="main-text">AI-Based Supplement Recommendation</div>
-        <div class="line"></div>
-        <div class="sub-text">
-          개인의 건강 데이터를 바탕으로 한 안전한 맞춤 영양제 추천<br>
-          AI가 복용 약품, 식습관, 건강 상태를 분석하고<br>
-          성분 간 상호작용까지 고려하여 가장 적절한 영양제를 추천합니다.
-        </div>
+        <p>Integrated Care,<br>Form Food to Skin</p>
       </div>
 
-      <!-- 카드 02 -->
-      <div class="kf-card">
-        <div class="card-num"><img src="../imgs/Group 1055.png" alt=""></div>
-        <div class="main-text">Automated Routine & Weekly Report</div>
-        <div class="line"></div>
-        <div class="sub-text">
-          생활패턴에 맞춘 루틴 자동 설계 + 데이터 리포트 제공<br>
-          아침/저녁 루틴 자동화는 물론,<br>
-          활동, 식단, 수면 정보를 분석한 주간 리포트를 자동 제공합니다.
+      <div class="main-card">
+
+        <div class="kf-card">
+          <div class="card-num">
+            <img src="../imgs/Group 1030.png" alt="">
+          </div>
+          <div class="main-text">AI-Based Supplement Recommendation</div>
+          <div class="line"></div>
+          <div class="sub-text">
+            개인의 건강 데이터를 바탕으로 한 안전한 맞춤 영양제 추천<br>
+            AI가 복용 약품, 식습관, 건강 상태를 분석하고<br>
+            성분 간 상호작용까지 고려하여 가장 적절한 영양제를 추천합니다.
+          </div>
         </div>
+
+        <div class="kf-card">
+          <div class="card-num">
+            <img src="../imgs/Group 1055.png" alt="">
+          </div>
+          <div class="main-text">Automated Routine & Weekly Report</div>
+          <div class="line"></div>
+          <div class="sub-text">
+            생활패턴에 맞춘 루틴 자동 설계 + 데이터 리포트 제공<br>
+            아침/저녁 루틴 자동화는 물론,<br>
+            활동, 식단, 수면 정보를 분석한 주간 리포트를 자동 제공합니다.
+          </div>
+        </div>
+
+        <div class="kf-card">
+          <div class="card-num">
+            <img src="../imgs/Group 1044.png" alt="">
+          </div>
+          <div class="main-text">Health Chatbot & Wearable Sync</div>
+          <div class="line"></div>
+          <div class="sub-text">
+            건강 상담부터 스마트워치 연동까지<br>
+            24시간 실시간 챗봇 상담으로 언제든 건강 고민 해결!<br>
+            웨어러블 기기와 연동해 활동량, 수면 등 건강 데이터를 자동 추적합니다.
+          </div>
+        </div>
+
       </div>
 
-      <!-- 카드 03 -->
-      <div class="kf-card">
-        <div class="card-num"><img src="../imgs/Group 1044.png" alt=""></div>
-        <div class="main-text">Health Chatbot & Wearable Sync</div>
-        <div class="line"></div>
-        <div class="sub-text">
-          건강 상담부터 스마트워치 연동까지<br>
-          24시간 실시간 챗봇 상담으로 언제든 건강 고민 해결!<br>
-          웨어러블 기기와 연동해 활동량, 수면 등 건강 데이터를 자동 추적합니다.
-        </div>
+      <div class="sub-title">
+        <p>AI가 만드는 당신만의 건강 루틴,<br>매일을 더 탄탄하게</p>
       </div>
 
-    </div> <!-- main-card 끝 -->
-
-    <div class="sub-title">
-      <p>AI가 만드는 당신만의 건강 루틴,<br>매일을 더 탄탄하게</p>
+      <div class="kf-pagination">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
     </div>
 
-    <!-- 페이지네이션 -->
-    <div class="kf-pagination">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-    </div>
   </section>
 <!-- 2page -->
  <section class="sec-2">
   <div class="sec-title">BEYOND<br>DATA<br>IT'S YOUR<br>RHYTHM</div>
-  <div class="sec-card card-1">
-    <img src="../imgs/card-img-1.png" alt="" class="card-img" width="218px">
+  <div class="sec-card card-1" data-aos="fade-up"
+     data-aos-duration="2000">
+    <img src="../imgs/card-img-1.png" alt="" class="card-img" width="180px">
     <div class="sec-card-text"># Health Sync & Reports</div>
     <div class="hover-desc">
-    개인 데이터와 <br>성분 상호작용 근거 제시,<br>
-    대안 제품도 함께 비교
+    <p>당신의 건강이 말하는 모든 것.</p>
+    우리는 그 변화를<br>
+    매주 리포트로 전달합니다.
   </div>
   </div>
-  <div class="sec-card card-2">
-    <img src="../imgs/card-img-2.png" alt="" class="card-img"  width="200px">
+  <div class="sec-card card-2" data-aos="fade-up"
+     data-aos-duration="2000">
+    <img src="../imgs/card-img-2.png" alt="" class="card-img"  width="180px">
     <div class="sec-card-text"># Smart Chatbot & Wearables</div>
     <div class="hover-desc">
-    일정 변화 감지,<br> 알림 강도 자동 조절,<br>
-    주간 리포트로<br> 보상과 피드백 제공
+    <p>묻지 않아도 알아서 챙기는 AI.</p>
+    웨어러블과 연결되면<br>
+    루틴이 더 똑똑해집니다.
   </div>
   </div>
-  <div class="sec-card card-3">
-    <img src="../imgs/card-img-3.png" alt="" class="card-img" width="200px">
+  <div class="sec-card card-3" data-aos="fade-up"
+     data-aos-duration="2000">
+    <img src="../imgs/card-img-3.png" alt="" class="card-img" width="150px">
     <div class="sec-card-text"># Auto Routine Design</div>
      <div class="hover-desc">
-    핵심 지표 통합 뷰,<br>
-    목표 대비 진척도<br> 한눈에 체크
+      <p>목표만 알려주세요.</p>
+      나머지는 AI가<br>
+      루틴으로 완성합니다.
   </div>
   </div>
   <div class="sec-sub-text"><p>루틴의 모든 순간, Loopyit이 함께합니다.</p></div>
  </section>
+
+<div class="close_bar bg_sec">
+      <div class="close_first_txt">/ Small Habits, Big Changes.</div>
+      <div class="close_second_txt">
+        COPYRIGHT LOOPYIT INC. ALL RIGHTS RESERVED.
+        <br />
+        CONTACT:+82-70-9876-5432 | support@loopyit.com | 서울특별시 강남구
+        테크밸리 456
+      </div>
+      <div class="bottom_img" data-aos="flip-left" data-aos-duration="500">
+        <img src="/imgs/footer-img.png" alt="#" width="300px" height="159px"/>
+      </div>
+      <div class="close_last_txt">LOOPYIT</div>
+    </div>
 
 </body>
 </html>
